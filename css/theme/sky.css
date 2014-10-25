@@ -47,11 +47,14 @@ body {
   font-family: "Quicksand", sans-serif;
   line-height: 0.9em;
   letter-spacing: -0.08em;
-  text-transform: uppercase;
   text-shadow: none; }
 
 .reveal h1 {
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
+  font-size: 2em;
+}
+.reveal p{
+  font-size: 1em;
+}
 
 /*********************************************
  * LINKS
@@ -143,3 +146,41 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: #3b759e; }
+
+.reveal table {
+margin-left: auto;
+margin-right: auto;
+width: 80%;
+}
+.reveal thead tr th{
+border: 1px solid #000000;
+padding: 6px 6px 6px 6px;
+width: 20%;
+text-align: center;
+}
+.reveal tr{
+border: 1px solid #000000;
+color: #000000;
+width: 20%;
+
+}
+.reveal td{
+border: 1px solid #000000;
+padding: 6px 6px 6px 6px;
+}
+.reveal #gridimage{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#slide2{
+  margin-top: 1.6em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60%;
+}
+#slide2 p{
+  font-size: 0.7em;
+  margin-bottom: 0.8em;
+  text-align: left;
+}
