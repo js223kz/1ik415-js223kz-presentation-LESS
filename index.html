@@ -1,53 +1,57 @@
-<html lang="sv">    
+<html lang="sv">
+
 <head>
-    <meta charset="utf-8">
-    <title>Grid layout och LESS</title>
-    <link rel="stylesheet" href="css/reveal.min.css">
-    <link rel="stylesheet" href="css/theme/sky.css" id="theme">    
-    <!--Add support for earlier versions of Internet Explorer -->
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
+	<meta charset="utf-8">
+	<title>Grid layout och LESS</title>
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+	<script src="lib/js/html5shiv.js"></script>
+
 </head>
- 
+
 <body>
-    <div class="reveal">
-        <div class="slides">
-					
+	<div class="reveal">
+		<div class="slides">
 			<section>
-              <h1>LESS och SEMANTIC GRID</h1>
-              <p>En effektiv väg till responsiv layout och väldigt DRY</p>        
-        	</section>
-        	<section>
-	        	<section>
-	        		<h1> Vad är Less?</h1>
-	        	</section>
-	        	<section>
-	        	<h1>LESS is a dynamic stylesheet language and a CSS pre-processor</h1>
-	        		<div id ="slide2">
-		        		<p>Du använder less för att styla din Html-kod. Koden skrivs i en fil med ändelsen .less</p>
-		        		<p>En speciell kompilator översätter (preprocessar) din Less-fil till en Css-fil</p>
-		        		<p>Syntaxen är väldigt snarlik och all css kod är giltigt i din .less-fil</p>
-		        		<p>Less är en förlängning av Css</p>
-	        		</div>
-	        	</section>
-        	</section>
-        <section>
-        	<section>
-        		<h1>Vad gör Less som inte Css kan?</h1>
-        	</section>
-        	<section>
-        		<h1>Variabler</h1>
-        		<pre><code>
+				<h1>LESS is more</h1>
+				<p>Ett effektivare sätt att styla HTML</p>
+			</section>
+			<section>
+				<section>
+					<h1>LESS</h1>
+					<div class="tagline">
+						<p>LESS is a dynamic stylesheet language and a CSS pre-processor</p>
+					</div>
+				</section>
+				<section>
+					<div id="slide2">
+						<h1>LESS i praktiken</h1>
+						<p class="fragment" data-fragment-index="1">Du skriver LESS-kod för att styla dina HTML-element</p>
+						<p class="fragment" data-fragment-index="2">Syntaxen är väldigt lik CSS</p>
+						<p class="fragment" data-fragment-index="3">All CSS-kod är giltig i en LESS-fil</p>
+						<p class="fragment" data-fragment-index="4">Koden skrivs i en fil med ändelsen .less</p>
+						<p class="fragment" data-fragment-index="5">Filen kompileras</p>
+						<p class="fragment" data-fragment-index="6">Kompilatorn skapar automatiskt en CSS-fil</p>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Fördelarna med LESS</h1>
+				</section>
+				<section>
+					<h1>Variabler</h1>
+					<pre><code class="html, less">
 					@lightBlue:#ddf;
  
 					.shape{
 					    background:@lightBlue;
 					}
 				</code></pre>
-        	</section>
-        	<section>
-        		<pre><code>
+				</section>
+				<section>
+					<h1>Variabler</h1>
+					<pre><code>
 					@lightRed:   #fdd;
 					@lightGreen: #dfd;
 					@lightBlue:  #ddf;
@@ -58,181 +62,86 @@
 				    background:@defaultThemeColor;
 					}
 				</code></pre>
-        	</section>
-        	<section>
-        		<h1>Mixins</h1>
-        		<pre><code>
-					.Round{
-					  -webkit-border-radius:9999px;
-					  -moz-border-radius:9999px;
-					  border-radius:9999px;   
+				</section>
+				<section>
+					<h1>Mixins</h1>
+					<pre>
+        		<code>
+        			.Round {
+					    -webkit-border-radius: 9999px; 
+					    -moz-border-radius: 9999px; 
+					    border-radius: 9999px;
 					}
-					.shape{
-							.Round;
+					.shape {
+					    .Round
 					}
-				</code></pre>
-        	</section>
-        	<section>
-        		<h1>Matematiska operationer</h1>
-        		<pre><code>
+        		</code>
+        		</pre>
+				</section>
+				<section>
+					<h1>Matematiska operationer</h1>
+					<pre><code>
 					@baseFontSize: 16px;
 					
 					p {
 					    font-size: @baseFontSize + 4;
 					}
 				</code></pre>
+				</section>
+				<section>
+					<h1>Färgfunktioner</h1>
+					<pre><code>
+					darken() och lighten(), som lägger på lite svart eller vitt
+					</code></pre>
+				</section>
+				<section>
+					<h1>Nästlade regler</h1>
+					<pre><code>
+        		p {
+				    color: #232323;
+				    font-family: Helvetica, Arial, sans-serif;
+				    font-size: 14px;
+				    line-height: 21px;
+				}
+				p .intro {
+				    font-variant: small-caps;
+				    font-size: 16px;
+				    line-height: 24px;
+				}
+				p .highlight {
+				    color: #00214D;
+				    font-weight: bold;
+				}
+				</code></pre>
+				</section>
+				<section>
+					<h1>Nästlade regler</h1>
+					<pre><code>
+					p {
+					    .intro {} 
+					    .highlight {}
+					}
+					</code></pre>
+				</section>
 			</section>
 			<section>
-	        		<h1>Färgfunktioner</h1>
-	        		<p>darken() och lighten(), som lägger på lite svart eller vitt</p>
-        	</section>
-        	<section>
-        		<h1>Nästlade regler</h1>
-        		<pre><code>
-	        		p {
-						color: #232323;
-						font-family: Helvetica, Arial, sans-serif;
-						font-size: 14px;
-						line-height: 21px;
-					}
-					
-					p .intro {
-						font-variant: small-caps;
-						font-size: 16px;
-						line-height: 24px;
-					}
-					
-					p .highlight {
-						color: #00214D;
-						font-weight: bold;
-					}
-				</code></pre>
+				<div id="lastslide">
+					<h1>Kompilering</h1>
+					<p class="fragment" data-fragment-index="1">I webbläsaren</p>
+					<p class="fragment" data-fragment-index="2">Server-side</p>	
+					<p class="fragment" data-fragment-index="3">App</p>	
+				</div>	
 			</section>
-			<section>
-				<pre><code>
-	        		p {
-	        			//generell kod för p taggen
-						
-						.intro {
-							// specifik kod för .intro class	
-						} 
-	
-						.highlight {
-							// specifik kod för .intro clas
-						} 
-					
-					} // Slut på paragrafregeln
-				</code></pre>
-			</section>
-        </section>
-        
-        	<section>
-	            <section id="show-a-link">
-	                <h1 class="navigate-down">En grid layout</h1>
-	            </section>    
-	            <section>
-			        	<table>
-									<thead>
-										<tr>
-											<th>Kolumn 1</th>
-											<th>Kolumn 2</th>
-											<th>Kolumn 3</th>
-											<th>Kolumn 4</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Rad 1</td>
-												<td>--></td>
-												<td>--></td>
-												<td>--></td>
-											</tr>
-										<tr>
-											<td>Rad 2</td>
-												<td>--></td>
-												<td>--></td>
-												<td>--></td>
-											</tr>
-										<tr>
-											<td>Rad 3</td>
-												<td>--></td>
-												<td>--></td>
-												<td>--></td>
-											</tr>
-										<tr>
-											<td>Rad 4</td>
-												<td>--></td>
-												<td>--></td>
-												<td>--></td>
-											</tr>
-										<tr>
-											<td>Rad 5</td>
-												<td>--></td>
-												<td>--></td>
-												<td>--></td>
-											</tr>
-										<tr>
-											<td>Rad 6</td>
-												<td>--></td>
-												<td>--></td>
-												<td>--></td>
-											</tr>
-										<tr>
-											<td>Rad 7</td>
-												<td>--></td>
-												<td>--></td>
-												<td>--></td>
-											</tr>
-										<tr>
-											<td>Rad 8</td>
-												<td>--></td>
-												<td>--></td>
-												<td>--></td>
-											</tr>
-										<tr>
-											<td>Rad 9</td>
-												<td>--></td>
-												<td>--></td>
-												<td>--></td>
-											</tr>
-										<tr>
-									</tbody>
-								</table> 
-	            </section>
-	            <section>
-	         			<img id="gridimage" src="css/pics/webpage_grid.png" alt="Översikt standard hemsida">     	
-	            </section>
-						</section>
-            <section>
-                <h1>Slide 3</h1>
-                <p>How does one revisit an arbitrary slide in code?</p>
-                <p>Visit internal slide<a href="#/show-a-link"> 2</a>
-            </section>
-            <section>
-						  <pre><code>
-						    $(function () {
-						      $('a').click(function(event) {
-						        alert('Thanks for visiting!'');
-						      });
-						    });
-						  </code></pre>
-						</section>
-						<section>
-						  Hello I have Notes. Press 's' to view
-						  <aside class="notes">
-						    Hello notes I cant se you
-						  </aside>
-						</section>
- 
-            </div>
-    </div>
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.min.js"></script>
- 
-    <script>
-        // Required, even if empty.
-        Reveal.initialize({
-        });
-    </script>
+			
+		</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
+
+	<script>
+		// Required, even if empty.
+		Reveal.initialize({});
+	</script>
 </body>
+
 </html>

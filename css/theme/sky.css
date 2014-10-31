@@ -152,26 +152,9 @@ margin-left: auto;
 margin-right: auto;
 width: 80%;
 }
-.reveal thead tr th{
-border: 1px solid #000000;
-padding: 6px 6px 6px 6px;
-width: 20%;
-text-align: center;
-}
-.reveal tr{
-border: 1px solid #000000;
-color: #000000;
-width: 20%;
 
-}
-.reveal td{
-border: 1px solid #000000;
-padding: 6px 6px 6px 6px;
-}
-.reveal #gridimage{
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+.tagline p{
+  font-size: 0.7em;
 }
 #slide2{
   margin-top: 1.6em;
@@ -183,4 +166,16 @@ padding: 6px 6px 6px 6px;
   font-size: 0.7em;
   margin-bottom: 0.8em;
   text-align: left;
+}
+#lastslide{
+  margin-top: 1.6em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 45%;
+}
+#lastslide p{
+  font-size: 0.7em;
+  margin-bottom: 0.8em;
+  text-align: left;
+  
 }
